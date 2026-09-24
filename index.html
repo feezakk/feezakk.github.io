@@ -1,1 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Feeza Khan Khanzada — PhD researcher working on driving world models, model-based reinforcement learning, and simulation-based autonomous driving."
+  />
+  <meta name="author" content="Feeza Khan Khanzada" />
+  <title>Feeza Khan Khanzada | PhD Researcher</title>
 
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --surface-soft: #f0f4f8;
+      --text: #111827;
+      --muted: #5f6b7a;
+      --line: #dbe2ea;
+      --accent: #0b5ea8;
+      --accent-dark: #084a84;
+      --tag: #eaf3fb;
+      --max-width: 1120px;
+      --radius: 18px;
+      --shadow: 0 12px 35px rgba(17, 24, 39, 0.07);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+    }
+
+    .container {
+      width: min(calc(100% - 36px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 248, 250, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(219, 226, 234, 0.85);
+    }
+
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 92px 0 58px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.55fr 0.85fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 800px;
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-title {
+      margin: 24px 0 14px;
+      font-size: clamp(1.2rem, 3vw, 1.62rem);
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.07rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 17px;
+      border: 1px solid var(--text);
+      border-radius: 999px;
+      color: var(--surface);
+      background: var(--text);
+      font-weight: 750;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      color: var(--surface);
+      transform: translateY(-1px);
+      opacity: 0.9;
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: transparent;
+      border-color: var(--line);
+    }
+
+    .button.secondary:hover {
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    .hero-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h2 {
+      margin: 0 0 18px;
+      font-size: 1.02rem;
+    }
+
+    .quick-fact {
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .quick-fact:first-of-type {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .quick-fact strong,
+    .quick-fact span {
+      display: block;
+    }
+
+    .quick-fact span {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    section {
+      padding: 58px 0;
+      scroll-margin-top: 82px;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.55fr 1.45fr;
+      gap: 34px;
+      margin-bottom: 30px;
+      align-items: start;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 850;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      margin: 12px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 8px 28px rgba(17, 24, 39, 0.045);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.3;
+      letter-spacing: -0.018em;
+    }
+
+    .meta {
+      margin: 8px 0 14px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .card p + p {
+      margin-top: 9px;
+    }
+
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
+      font-size: 0.92rem;
+      font-weight: 750;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--tag);
+      color: #214f72;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .publication-list,
+    .timeline {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .publication,
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 0.35fr 1.65fr;
+      gap: 28px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .publication .venue,
+    .timeline-date {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .publication h3,
+    .timeline-item h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.45;
+    }
+
+    .publication p,
+    .timeline-item p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .skill-block {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .skill-block h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .skill-block p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-box {
+      padding: clamp(28px, 6vw, 50px);
+      border-radius: 26px;
+      background: var(--text);
+      color: var(--surface);
+    }
+
+    .contact-box .section-kicker {
+      color: #9dcef7;
+    }
+
+    .contact-box h2 {
+      margin: 8px 0 14px;
+      max-width: 700px;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .contact-box p {
+      max-width: 720px;
+      margin: 0;
+      color: #c7d0dc;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      margin-top: 24px;
+      font-weight: 750;
+    }
+
+    .contact-links a {
+      color: #ffffff;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 820px) {
+      .site-header {
+        position: static;
+      }
+
+      .nav {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 62px;
+      }
+
+      .hero-grid,
+      .section-heading,
+      .publication,
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        gap: 12px;
+      }
+
+      .publication,
+      .timeline-item {
+        gap: 7px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Feeza Khan Khanzada</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">PhD Researcher · Autonomous Driving</p>
+          <h1>Feeza Khan Khanzada</h1>
+          <p class="hero-title">
+            Driving World Models, Model-Based Reinforcement Learning & Simulation
+          </p>
+          <p class="hero-copy">
+            PhD candidate in Electrical and Computer Engineering at the University
+            of Michigan-Dearborn. I develop driving world models, model-based
+            reinforcement learning methods, and simulation benchmarks for
+            autonomous driving, with an emphasis on action-conditioned prediction,
+            transfer, and decision-oriented evaluation.
+          </p>
+
+          <div class="actions">
+            <a class="button" href="#research">View research</a>
+            <a class="button secondary" href="mailto:feezakk@umich.edu">Email me</a>
+            <a
+              class="button secondary"
+              href="https://scholar.google.com/citations?user=sHMuwxAAAAAJ&hl=en"
+              target="_blank"
+              rel="noreferrer"
+            >Google Scholar</a>
+            <a
+              class="button secondary"
+              href="https://github.com/feezakk"
+              target="_blank"
+              rel="noreferrer"
+            >GitHub</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Profile summary">
+          <h2>At a glance</h2>
+
+          <div class="quick-fact">
+            <strong>University of Michigan-Dearborn</strong>
+            <span>PhD in Electrical & Computer Engineering</span>
+          </div>
+
+          <div class="quick-fact">
+            <strong>4.00 / 4.00 GPA</strong>
+            <span>Expected graduation: August 2027</span>
+          </div>
+
+          <div class="quick-fact">
+            <strong>Research focus</strong>
+            <span>World models, model-based RL, autonomous driving, simulation</span>
+          </div>
+
+          <div class="quick-fact">
+            <strong>Location</strong>
+            <span>Dearborn, Michigan</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Selected Research</div>
+          <div>
+            <h2>Prediction, planning, generalization, and reliable evaluation.</h2>
+            <p>
+              Recent work spans action-conditioned driving prediction, world-model
+              pretraining and distillation, camera-first waypoint prediction,
+              simulator-backed evaluation, and replayable robot task monitoring.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <article class="card">
+            <h3>BranchDrive: Action-Conditioned Prediction & Selection</h3>
+            <div class="meta">Manuscript · 2026</div>
+            <p>
+              Co-developed a benchmark with 606 audited branch groups and 7,878
+              trajectories, pairing each canonical driving history with 13
+              simulator-executed futures.
+            </p>
+            <p>
+              History-plus-action prediction achieved 2.20 m test ADE versus
+              4.24 m for history-only; outcome-based selection reduced normalized
+              regret from 0.267 to 0.150 in fixed-bank offline evaluation.
+            </p>
+            <div class="tags">
+              <span class="tag">Action-conditioned prediction</span>
+              <span class="tag">CARLA</span>
+              <span class="tag">Offline selection</span>
+            </div>
+            <div class="card-links">
+              <a href="https://arxiv.org/abs/2609.27275" target="_blank" rel="noreferrer">Paper ↗</a>
+              <a href="https://github.com/feezakk/BranchDrive-A-Branch-Structured-Dataset-for-Action-Conditioned-Driving-Prediction." target="_blank" rel="noreferrer">Code ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Auxiliary State Prediction for Driving Action Selection</h3>
+            <div class="meta">Submitted manuscript · 2026</div>
+            <p>
+              Compared joint state/outcome supervision with outcome-only training
+              using an architecture-matched CNN-GRU, paired initialization, and a
+              common validation outcome-loss checkpoint criterion.
+            </p>
+            <p>
+              On the primary 16-plan bank, outcome-only training achieved 2.897 m
+              greater mean selected progress, with no selected collisions observed
+              in either condition.
+            </p>
+            <div class="tags">
+              <span class="tag">Action selection</span>
+              <span class="tag">CNN-GRU</span>
+              <span class="tag">BEV</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/feezakk/Auxiliary-State-Prediction" target="_blank" rel="noreferrer">Code ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>InDRiVE: Intrinsic Exploration for Driving World Models</h3>
+            <div class="meta">IEEE ICMLA 2026 · First author</div>
+            <p>
+              Developed reward-free world-model pretraining using latent-ensemble
+              disagreement, reaching 73.2% zero-shot success in an unseen town and,
+              separately, 94.8% collision avoidance after limited adaptation.
+            </p>
+            <div class="tags">
+              <span class="tag">World models</span>
+              <span class="tag">Intrinsic exploration</span>
+              <span class="tag">Dreamer-style RL</span>
+            </div>
+            <div class="card-links">
+              <a href="https://par.nsf.gov/biblio/10712499" target="_blank" rel="noreferrer">Paper ↗</a>
+              <a href="https://github.com/feezakk/InDRiVE" target="_blank" rel="noreferrer">Code ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Actor-Centric Supervision for Camera-First Waypoint Prediction</h3>
+            <div class="meta">IEEE ICMLA 2026 · First author</div>
+            <p>
+              Generated 4.2 million multi-view samples across 12,405 routes with
+              actor-centric geometry, depth, relevance, and motion supervision.
+              Developed ConvNeXt-Tiny and Transformer models for camera-first
+              open-loop waypoint prediction.
+            </p>
+            <div class="tags">
+              <span class="tag">Camera-first driving</span>
+              <span class="tag">Actor-centric supervision</span>
+              <span class="tag">Transformers</span>
+            </div>
+            <div class="card-links">
+              <a href="https://arxiv.org/abs/2606.20772" target="_blank" rel="noreferrer">Paper ↗</a>
+              <a href="https://github.com/feezakk/Mind-the-previlliged-to-camera-gap" target="_blank" rel="noreferrer">Code ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>D2S-WMD: Teacher–Student World-Model Distillation</h3>
+            <div class="meta">IEEE ICMLA 2026 · First author</div>
+            <p>
+              Developed teacher–student world-model distillation using semantic
+              observations, improving unseen-route lane-following success from
+              40.3% to 49.5%.
+            </p>
+            <div class="tags">
+              <span class="tag">Distillation</span>
+              <span class="tag">Generalization</span>
+              <span class="tag">Semantic observations</span>
+            </div>
+            <div class="card-links">
+              <a href="https://par.nsf.gov/biblio/10712502" target="_blank" rel="noreferrer">Paper ↗</a>
+              <a href="https://github.com/feezakk/dense-to-sparse" target="_blank" rel="noreferrer">Code ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>RGB World Models for Cross-Town Generalization</h3>
+            <div class="meta">Submitted manuscript · 2026</div>
+            <p>
+              Developed raw-RGB DreamerV3 models with multi-horizon OpenCLIP
+              prediction, semantic auxiliary objectives, and town-adversarial
+              representation learning, evaluated with matched baselines and
+              five-seed ablations.
+            </p>
+            <div class="tags">
+              <span class="tag">DreamerV3</span>
+              <span class="tag">OpenCLIP</span>
+              <span class="tag">Domain generalization</span>
+            </div>
+            <div class="card-links">
+              <a href="https://arxiv.org/abs/2604.27994" target="_blank" rel="noreferrer">Paper ↗</a>
+              <a href="https://github.com/feezakk/semantic-vlm" target="_blank" rel="noreferrer">Code ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Task Contracts & Replayable Robot Monitoring</h3>
+            <div class="meta">AAAI 2026 · First author</div>
+            <p>
+              Developed deterministic robot-profile binding and ROS-independent
+              contract monitoring that separates executor status from task
+              evidence. All 24 controlled trace cases matched prespecified
+              evaluator outcomes, including 18 non-nominal cases.
+            </p>
+            <div class="tags">
+              <span class="tag">Robotics</span>
+              <span class="tag">Task monitoring</span>
+              <span class="tag">ROS</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/feezakk/Action-Success-Is-Not-Task-Success" target="_blank" rel="noreferrer">Code ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Publications</div>
+          <div>
+            <h2>Selected papers and manuscripts.</h2>
+            <p>
+              First-author work includes autonomous-driving world models,
+              representation learning, robot monitoring, reinforcement learning,
+              and vision-based control.
+            </p>
+          </div>
+        </div>
+
+        <div class="publication-list">
+          <article class="publication">
+            <div class="venue">IEEE ICMLA 2026</div>
+            <div>
+              <h3>InDRiVE: Neurocognitive-Inspired World-Model Pretraining with Intrinsic Uncertainty for Transferable Autonomous Driving</h3>
+              <p>Accepted · First author · <a href="https://par.nsf.gov/biblio/10712499" target="_blank" rel="noreferrer">Paper ↗</a></p>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="venue">IEEE ICMLA 2026</div>
+            <div>
+              <h3>D2S-WMD: Dense-to-Sparse World-Model Distillation for Sparse-Metric Generalization in CARLA Driving</h3>
+              <p>Accepted · First author · <a href="https://par.nsf.gov/biblio/10712502" target="_blank" rel="noreferrer">Paper ↗</a></p>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="venue">IEEE ICMLA 2026</div>
+            <div>
+              <h3>Mind the Privileged-to-Camera Gap: Actor-Centric Sidecar Supervision for Camera-First Open-Loop Waypoint Prediction</h3>
+              <p>Accepted · First author · <a href="https://arxiv.org/abs/2606.20772" target="_blank" rel="noreferrer">Paper ↗</a></p>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="venue">AAAI 2026</div>
+            <div>
+              <h3>Action Success Is Not Task Success: Deterministic Robot-Profile Binding and Replayable Contract Monitoring</h3>
+              <p>Accepted · First author</p>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="venue">IEEE Access 2026</div>
+            <div>
+              <h3>A Comprehensive Review of Reinforcement Learning for Autonomous Driving in the CARLA Simulator</h3>
+              <p>Accepted · First author · <a href="https://ieeexplore.ieee.org/abstract/document/11658861" target="_blank" rel="noreferrer">Paper ↗</a></p>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="venue">IEEE ICRA 2024</div>
+            <div>
+              <h3>Analytical Study on Region of Interest and Dataset Size of Vision-based End-to-End Lateral Control for Off-road Autonomy</h3>
+              <p>Accepted · First author · <a href="https://openreview.net/forum?id=KaZ40iwHg7" target="_blank" rel="noreferrer">Paper ↗</a></p>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="venue">Manuscript · 2026</div>
+            <div>
+              <h3>BranchDrive: A Branch-Structured Dataset for Action-Conditioned Driving Prediction</h3>
+              <p>First author · <a href="https://arxiv.org/abs/2609.27275" target="_blank" rel="noreferrer">Preprint ↗</a></p>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="venue">Submitted manuscript</div>
+            <div>
+              <h3>Does Auxiliary State Prediction Help Driving Action Selection?</h3>
+              <p>First author</p>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="venue">Submitted manuscript · 2026</div>
+            <div>
+              <h3>Zero-Shot Cross-Town Generalization in Autonomous Route Following via Semantic Auxiliary and Domain-Adversarial World Models</h3>
+              <p>First author · <a href="https://arxiv.org/abs/2604.27994" target="_blank" rel="noreferrer">Preprint ↗</a></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Experience</div>
+          <div>
+            <h2>Research, teaching, and engineering.</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Aug 2023 — Present</div>
+            <div>
+              <h3>Graduate Student Research Assistant · University of Michigan-Dearborn</h3>
+              <p>
+                Research on driving world models, action-conditioned prediction,
+                model-based reinforcement learning, simulation benchmarks, and
+                decision-oriented evaluation.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">Aug 2025 — Present</div>
+            <div>
+              <h3>Graduate Student Instructor · University of Michigan-Dearborn</h3>
+              <p>
+                Led ECE 270 recitations and ECE 270/305 grading for 190+ students;
+                taught robotic-manipulation and computer-hardware laboratories.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">Oct 2021 — Oct 2022</div>
+            <div>
+              <h3>Research Assistant · Freie Universität Berlin</h3>
+              <p>
+                Built Python GitHub-metadata ingestion with pagination, caching,
+                and rate-limit handling; prototyped text-embedding and code-token
+                models for software-license risk analysis.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">May 2017 — Mar 2020</div>
+            <div>
+              <h3>Research Fellow · University of Bath</h3>
+              <p>
+                Developed uncertainty-aware, interpretable deep-learning models and
+                training/evaluation pipelines; conducted controlled user studies
+                for decision support.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">Jul 2013 — May 2017</div>
+            <div>
+              <h3>Software Programmer · Fateh Motors Ltd.</h3>
+              <p>
+                Developed vehicle and manufacturing software with mechanical and
+                electrical engineers; introduced version control, basic testing,
+                and deployment practices.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Technical Skills</div>
+          <div>
+            <h2>Methods and tools used across my research.</h2>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-block">
+            <h3>Learning</h3>
+            <p>
+              Model-based RL, DreamerV3, latent dynamics, intrinsic exploration,
+              world-model distillation, multimodal representation learning,
+              actor-centric motion and waypoint prediction.
+            </p>
+          </div>
+
+          <div class="skill-block">
+            <h3>Programming & ML</h3>
+            <p>
+              Python, C++, PyTorch, JAX, TensorFlow/Keras, Linux, Docker, Git,
+              Weights & Biases.
+            </p>
+          </div>
+
+          <div class="skill-block">
+            <h3>Simulation & Robotics</h3>
+            <p>
+              CARLA, MetaDrive, multi-view simulation data generation, ROS 1/2,
+              Gazebo.
+            </p>
+          </div>
+
+          <div class="skill-block">
+            <h3>Evaluation</h3>
+            <p>
+              Group-/route-disjoint splits, paired-seed ablations, bootstrap
+              intervals, ADE/FDE, offline candidate ranking, uncertainty and
+              failure analysis, replay-fidelity and data-leakage audits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Education</div>
+          <div>
+            <h2>Electrical, computer, and information engineering.</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2023 — 2027 (expected)</div>
+            <div>
+              <h3>PhD in Electrical and Computer Engineering</h3>
+              <p>University of Michigan-Dearborn · GPA: 4.00 / 4.00</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">2013 — 2016</div>
+            <div>
+              <h3>M.E. in Computer and Information Engineering</h3>
+              <p>Mehran University of Engineering and Technology · CGPA: 3.87 / 4.00</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">2009 — 2013</div>
+            <div>
+              <h3>B.E. in Computer Engineering</h3>
+              <p>Mehran University of Engineering and Technology · CGPA: 3.79 / 4.00</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="section-kicker">Contact</div>
+          <h2>Interested in autonomous driving, world models, or simulation-based learning?</h2>
+          <p>
+            For research discussions, collaborations, and related opportunities,
+            email me or view my publications and code.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:feezakk@umich.edu">feezakk@umich.edu</a>
+            <a href="https://github.com/feezakk" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href="https://scholar.google.com/citations?user=sHMuwxAAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Feeza Khan Khanzada</span>
+      <span>Built for GitHub Pages.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
